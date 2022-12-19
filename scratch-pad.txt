@@ -9,3 +9,9 @@ email: VARCHAR(255)
 sequelize model:create --name (name of the table singular) --attributes colName:dataType,colName:dataType
 
 sequelize model:create --name user --attributes firstName:string,lastName:string,age:integer,email:string
+
+
+// PETS MODEL CREATE COMMAND
+// 1 user can have many pets, users - pets are 1:M
+// foriegn keys are integers with the exact casing of parentModelId:integer (parentModel being the exact name of the 1 in the relationship)
+sequelize model:create --name pet --attributes name:string,species:string,description:text,userId:integer
