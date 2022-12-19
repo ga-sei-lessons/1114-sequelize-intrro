@@ -4,12 +4,12 @@ const db = require('./models')
 async function userCrud() {
     try {
         // CREATE
-        // const newUser = await db.user.create({
-        //     firstName: 'April',
-        //     lastName: 'Gonzales',
-        //     age: 30,
-        //     email: 'april.gonzales@generalassemb.ly'
-        // })
+        const newUser = await db.user.create({
+            firstName: 'April',
+            lastName: 'Gonzales',
+            age: 30,
+            email: 'april.gonzales@generalassemb.ly'
+        })
 
         // console.log(`new user name: ${newUser.firstName} ${newUser.lastName}, email: ${newUser.email}`)
 
@@ -57,20 +57,20 @@ async function userCrud() {
 
         // UPDATE
         // update({ what to update }, { where: { what to search for }})
-        const numRowsChange = await db.user.update({ age: 100 }, {
-            where: {
-                firstName: 'Weston'
-            }
-        })
-        console.log(numRowsChange)
+        // const numRowsChange = await db.user.update({ age: 100 }, {
+        //     where: {
+        //         firstName: 'Weston'
+        //     }
+        // })
+        // console.log(numRowsChange)
         
-        // DESTROY
-        const numRowsDeleted = await db.user.destroy({
-            where: {
-                firstName: 'Weston'
-            }
-        })
-        console.log(numRowsDeleted)
+        // // DESTROY
+        // const numRowsDeleted = await db.user.destroy({
+        //     where: {
+        //         firstName: 'Weston'
+        //     }
+        // })
+        // console.log(numRowsDeleted)
     } catch (err) {
         console.log(err)
     }
