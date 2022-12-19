@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       // how you define the parent in a 1:M relationship
       models.user.hasMany(models.pet)
+      // user = { `create${modelName}`: () =>  }
     }
   };
   user.init({
