@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       // tells sequelize that the pet model is the child in a 1:M relationship with user
       models.pet.belongsTo(models.user)
+      // defines N:M with toys, and what join table to use
+      models.pet.belongsToMany(models.toy, { through: "pets_toys" })
     }
   }
   pet.init({

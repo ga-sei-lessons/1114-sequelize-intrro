@@ -15,3 +15,21 @@ sequelize model:create --name user --attributes firstName:string,lastName:string
 // 1 user can have many pets, users - pets are 1:M
 // foriegn keys are integers with the exact casing of parentModelId:integer (parentModel being the exact name of the 1 in the relationship)
 sequelize model:create --name pet --attributes name:string,species:string,description:text,userId:integer
+
+// PETS - TOYS have a N:M relationship
+
+pets_toys -- this is a join table for the N:M relationship
+---------
+petId: integer (fk ref to pet's pk)
+toyId: integer (fk ref to toy's pk)
+
+toys 
+---------
+type: string
+color: string
+
+// NOTE: join table models names can be pluralized
+// FK columns need to be camelCased modelNameId:integer (just like 1:M)
+sequelize model:create --name pets_toys --attributes petId:integer,toyId:integer
+
+sequelize model:create --name toy --attributes type:string,color:string
