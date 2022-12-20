@@ -56,6 +56,7 @@ const relationshipCrud = async () => {
             where: {
                 id: 1
             },
+            // fixes 'EagerLoadingError'
             include: [{
                 model: db.pet,
                 include: [{
